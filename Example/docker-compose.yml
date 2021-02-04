@@ -1,0 +1,15 @@
+# Examplary docker-compose file using the provided Dockerfile
+version: '3.4'
+
+services:
+  example:
+    privileged: true
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+        - /dev/i2c-1:/dev/i2c-1
+    devices:
+        - /dev/i2c-1:/dev/i2c-1
